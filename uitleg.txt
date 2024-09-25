@@ -1,0 +1,37 @@
+Breakdown:
+Object.entries(age): This converts the age object into an array of key-value pairs. Each pair is represented as an array where the first element is the key and the second element is the value.
+.sort((a, b) => a[1][0] - b[1][0]): This sorts the array of entries. The sorting function compares the first element of the value arrays (a[1][0] and b[1][0]) of each entry. The subtraction (a[1][0] - b[1][0]) determines the order:
+If the result is negative, a comes before b.
+If the result is positive, b comes before a.
+If the result is zero, their order remains unchanged.
+--
+
+Point 2: Sorting the Array of Entries
+The .sort((a, b) => a[1][0] - b[1][0]) part of the code sorts the array of entries. Here's a step-by-step explanation:
+
+Array of Entries:
+
+Object.entries(age) converts the age object into an array of key-value pairs (entries). Each entry is an array where the first element is the key and the second element is the value.
+Example: If age is { "John": [25], "Jane": [22], "Doe": [30] }, Object.entries(age) will produce [ ["John", [25]], ["Jane", [22]], ["Doe", [30]] ].
+Sorting Function:
+
+The .sort() method sorts the elements of an array in place and returns the sorted array.
+The sorting function (a, b) => a[1][0] - b[1][0] is used to determine the order of the elements.
+Sorting Logic:
+
+a and b are two elements (entries) from the array being compared.
+a[1][0] and b[1][0] refer to the first element of the value arrays of a and b, respectively.
+For example, if a is ["John", [25]], then a[1][0] is 25.
+If b is ["Jane", [22]], then b[1][0] is 22.
+The expression a[1][0] - b[1][0] subtracts the first element of b's value array from the first element of a's value array.
+
+--
+
+let entries = Object.entries(age);
+// entries: [ ["John", [25]], ["Jane", [22]], ["Doe", [30]] ]
+
+a[1] accesses the value array of the entry.
+a[1][0] accesses the first element of the value array, which is the age.
+
+let entry = ["John", [25]];
+entry[1][0]; // Output: 25
